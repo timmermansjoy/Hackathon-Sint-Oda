@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void Start()
+    public void updateClick()
     {
         int holes = PlayerPrefs.GetInt("holes");
         GameObject.Find("HoleNumberIndicator").GetComponent<TMPro.TextMeshProUGUI>().text = "" + (holes);
