@@ -435,13 +435,23 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   molPrefab: {fileID: 5409008480641268140, guid: c3ae37e4d0feaac42ab3780310859e1f, type: 3}
+  spawnPrefab: {fileID: 4700866804755572986, guid: a0a651412bcafd844aaac14a21e04ec5, type: 3}
   currentMol: {fileID: 0}
   spawns:
-  - {fileID: 867544826}
-  - {fileID: 1175884863}
-  - {fileID: 123469816}
-  - {fileID: 30064237}
-  - {fileID: 1748202956}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   gameTime: 5
   start: 0
   scaleHitbox: 0
