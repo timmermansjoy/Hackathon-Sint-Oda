@@ -28,7 +28,8 @@ public class ClickController : MonoBehaviour
             }
         }
     }
-    void playStarsParticle(Vector3 mousePos) {
+    void playStarsParticle(Vector3 mousePos)
+    {
         ParticleSystem.ShapeModule _editableShape = stars.shape;
         _editableShape.position = new Vector3(mousePos.x, 0, mousePos.y);
         stars.Play();
