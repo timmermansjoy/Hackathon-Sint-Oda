@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Spawn : MonoBehaviour
 {
     public GameObject molPrefab;
+    public GameObject currentMol;
     public Transform[] spawns;
     public float gameTime = 5f;
-    bool start;
-    float scaleHitbox = 10.0f;
+    public bool start;
+    [SerializeField] float scaleHitbox = 0.0f;
     // public class Mol
     // {
     //     void Start()
@@ -27,21 +28,25 @@ public class Spawn : MonoBehaviour
     // }
     void Start()
     {
-        SpawnMol(true);
+        currentMol = SpawnMol(true);
     }
 
     void Update()
     {
-        gameTime -= Time.deltaTime;
+        if (start)
+        {
+            gameTime -= Time.deltaTime;
+        }
         //Debug.Log(gameTime);
         if (gameTime < 0)
         {
             gameTime = 5f;
-            SpawnMol();
+            Destroy(currentMol);
+            currentMol = SpawnMol();
         }
     }
 
-    public void SpawnMol(bool def = false)
+    public GameObject SpawnMol(bool def = false)
     {
         GameObject mol = Instantiate(molPrefab) as GameObject;
         CapsuleCollider2D molCollider = GetComponent<CapsuleCollider2D>();
@@ -54,6 +59,11 @@ public class Spawn : MonoBehaviour
         {
             mol.transform.position = spawns[Random.Range(0, spawns.Length)].transform.position;
         }
+        return mol;
+    }
+    public void setSpawns()
+    {
+
     }
 
 }

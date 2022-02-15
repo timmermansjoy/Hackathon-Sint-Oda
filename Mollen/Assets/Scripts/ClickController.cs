@@ -19,6 +19,10 @@ public class ClickController : MonoBehaviour
             if (hit.collider != null)
             {
                 Destroy(hit.transform.gameObject);
+                if (!spawner.start)
+                {
+                    spawner.start = true;
+                }
             }
         }
     }
