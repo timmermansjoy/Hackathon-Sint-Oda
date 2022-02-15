@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClickController : MonoBehaviour
 {
+    public ParticleSystem stars;
     private Spawn spawner;
     void Start()
     {
@@ -18,6 +19,7 @@ public class ClickController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mouse2D, Vector2.zero);
             if (hit.collider != null)
             {
+                playStarsParticle(mouse);
                 Destroy(hit.transform.gameObject);
                 if (!spawner.start)
                 {
@@ -25,5 +27,10 @@ public class ClickController : MonoBehaviour
                 }
             }
         }
+    }
+    void playStarsParticle(Vector3 mousePos) {
+        ParticleSystem.ShapeModule _editableShape = stars.shape;
+        _editableShape.position = new Vector3(mousePos.x, 0, mousePos.y);
+        stars.Play();
     }
 }
