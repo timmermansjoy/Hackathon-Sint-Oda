@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public Transform[] spawns;
     public float gameTime = 5f;
     bool start;
-
+    float scaleHitbox = 10.0f;
     // public class Mol
     // {
     //     void Start()
@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour
     void Update()
     {
         gameTime -= Time.deltaTime;
-        Debug.Log(gameTime);
+        //Debug.Log(gameTime);
         if (gameTime < 0)
         {
             gameTime = 5f;
@@ -41,9 +41,11 @@ public class Spawn : MonoBehaviour
         }
     }
 
-    public GameObject SpawnMol(bool def = false)
+    public void SpawnMol(bool def = false)
     {
         GameObject mol = Instantiate(molPrefab) as GameObject;
+        CapsuleCollider2D molCollider = GetComponent<CapsuleCollider2D>();
+        mol.transform.localScale += new Vector3(scaleHitbox, scaleHitbox, 0.0f);
         if (def)
         {
             mol.transform.position = new Vector3(0, 0, 0);
@@ -52,7 +54,6 @@ public class Spawn : MonoBehaviour
         {
             mol.transform.position = spawns[Random.Range(0, spawns.Length)].transform.position;
         }
-        return mol;
     }
 
 }
