@@ -7,12 +7,16 @@ public class Spawn : MonoBehaviour
 {
     public GameObject molPrefab;
     public GameObject spawnPrefab;
+    public GameObject bombPrefab;
     public GameObject currentMol;
+    public GameObject currentBom;
     public Transform[] spawns;
     private float gameTime;
     public bool start;
     public int score;
     [SerializeField] float scaleHitbox = 0.0f;
+
+    float bombTime;
 
 
     private int speed;
@@ -25,6 +29,7 @@ public class Spawn : MonoBehaviour
     {
         setSpawns();
         score = 0;
+        bombTime = Random.Range(10f, 20f);
         currentMol = SpawnMol();
 
         // settings
@@ -39,12 +44,20 @@ public class Spawn : MonoBehaviour
         if (start)
         {
             gameTime -= Time.deltaTime;
+            bombTime -= Time.deltaTime;
         }
         //Debug.Log(gameTime);
         if (gameTime < 0)
         {
             gameTime = Random.Range(2f, 6f - speed) + (pauze / 2);
             currentMol = SpawnMol();
+        }
+        if (bombTime < 0)
+        {
+            Destroy(currentBom);
+            currentBom = SpawnBomb();
+            bombTime = Random.Range(10f, 20f);
+
         }
     }
 
@@ -61,6 +74,12 @@ public class Spawn : MonoBehaviour
         mol.transform.position = new Vector3(mol.transform.position.x, mol.transform.position.y + 0.75f, 0);
         // mol.transform.parent = spawns[0];
         return mol;
+    }
+    public GameObject SpawnBomb()
+    {
+        GameObject bom = Instantiate(bombPrefab) as GameObject;
+        bom.transform.position = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 1f), 0f);
+        return bom;
     }
     public void setSpawns()
     {
