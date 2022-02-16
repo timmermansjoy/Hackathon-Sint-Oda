@@ -9,9 +9,10 @@ public class Spawn : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject currentMol;
     public Transform[] spawns;
-    public float gameTime = 5f;
+    private float gameTime = PlayerPrefs.GetInt("pauze");
     public bool start;
     public int score;
+    public int counter = 0;
     [SerializeField] float scaleHitbox = 0.0f;
     // public class Mol
     // {
@@ -33,19 +34,22 @@ public class Spawn : MonoBehaviour
         setSpawns();
         score = 0;
         currentMol = SpawnMol();
-
+        gameTime = PlayerPrefs.GetInt("pauze");
     }
 
     void Update()
     {
         if (start)
         {
+            if (counter < 1) { Debug.Log(gameTime); }
             gameTime -= Time.deltaTime;
+            if (counter < 1) { Debug.Log(gameTime); }
+            counter++;
         }
         //Debug.Log(gameTime);
         if (gameTime < 0)
         {
-            gameTime = Random.Range(2f, 6f);
+            gameTime = PlayerPrefs.GetInt("pauze");
             currentMol = SpawnMol();
         }
     }
