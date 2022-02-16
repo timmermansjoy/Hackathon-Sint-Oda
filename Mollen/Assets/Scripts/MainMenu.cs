@@ -12,8 +12,18 @@ public class MainMenu : MonoBehaviour
     public int maxPause = 5;
     private int minNumber = 1;
     public int maxLevel = 4;
+    private bool isPressed = false;
+    private float pressedTime = 0f;
 
-
+    void FixedUpdate() {
+        if (isPressed) {
+            pressedTime += Time.deltaTime;
+            if (pressedTime > 3f) {
+                isPressed = false;
+                BackToMainMenu();
+            }
+        }
+    }
 
     public void PlayGame()
     {
@@ -23,6 +33,15 @@ public class MainMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
+
+    public void OnPointerDown()
+    {
+        isPressed = true;
+    }
+    public void OnPointerUp()
+    {
+        isPressed = false;
     }
 
     public void updateClick()
