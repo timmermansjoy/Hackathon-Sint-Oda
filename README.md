@@ -9,20 +9,20 @@ Josef Omelyusik (SWM)
 
 #### Gekozen onderwerp game: Malle Mollen  
 #### Uitwerking concept  
-Licht hier kort toe hoe jullie het concept van het gekozen seizoen hebben gerealiseerd. Doel hier om dit functioneel te beschrijven  
+We hebben het Malle Mollen spel gemaakt. Wanneer het spel opstart zal er een mol verschijnen. Het is de bedoeling dat de gebruiker hier dan op klikt. Daarna zullen er op een willekeurige plaats steeds nieuwe mollen verschijnen. De gebruiker zal elke mol proberen te klikken. 
 
 #### Gebruikte technologieën  
-Unity  
+De 2021.2.11 versie van Unity wordt hier gebruikt.
 
-Gelieve ook beknopt toe te lichten indien er bepaalde plugins of frameworks werden gebruikt
-
-bv plugin X, framework Y  
-
-#### Gebruikte resources  
+#### Gebruikte resources
 Welke resources (afbeeldingen, geluiden, ...) hebben jullie gebruikt? Graag bronvermelding / URL toevoegen  
+Tutorials:
+https://noobtuts.com/unity/2d-whack-a-mole-game
+https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s
 
-#### Repository  
-https://classroom.github.com/a/wXmQMEhv  
+#### Repository
+Link naar de repository:
+https://github.com/PXL-Smart-ICT/hackathon-sint-oda-feb2022-team05
 
 #### Build / deploy proces  
 Documenteer hier de vereiste stappen om de applicatie te builden en/of deployen op een tablet  
