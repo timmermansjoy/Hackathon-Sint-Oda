@@ -8,12 +8,13 @@ public class MolController : MonoBehaviour
     public float lifeTime;
     public Sprite[] molSprites;
     public GameObject molDoodPrefab;
-    private int speed = PlayerPrefs.GetInt("speed");
+    private int speed;
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
         lifeTime = Random.Range(2f, 6f - (speed / 1.5f));
         int soort = Random.Range(0, 10);
+        speed = PlayerPrefs.GetInt("speed");
         Sprite spr;
         if (soort == 1)
         {
