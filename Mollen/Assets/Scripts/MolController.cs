@@ -17,6 +17,7 @@ public class MolController : MonoBehaviour
         lifeTime = Random.Range(2f, 6f - (speed / 1.5f));
 
         int soort = Random.Range(0, 10);
+        speed = PlayerPrefs.GetInt("speed");
         Sprite spr;
         if (soort == 1)
         {
