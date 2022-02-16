@@ -36,6 +36,9 @@ jobs:
           restore-keys: |
             Library-
 
+      - name: step into
+        run: cd Mollen
+
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2
@@ -44,6 +47,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: ./Mollen/
           targetPlatform: Android
 
       # Output
