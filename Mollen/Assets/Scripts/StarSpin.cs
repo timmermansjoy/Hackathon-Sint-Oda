@@ -11,7 +11,7 @@ public class StarSpin : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (spin)
         {
