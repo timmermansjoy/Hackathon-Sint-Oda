@@ -9,6 +9,7 @@ public class Spawn : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject bombPrefab;
     public GameObject currentMol;
+    public GameObject currentBom;
     public Transform[] spawns;
     private float gameTime;
     public bool start;
@@ -53,7 +54,9 @@ public class Spawn : MonoBehaviour
         }
         if (bombTime < 0)
         {
-
+            Destroy(currentBom);
+            currentBom = SpawnBomb();
+            bombTime = Random.Range(10f, 20f);
 
         }
     }
@@ -72,10 +75,11 @@ public class Spawn : MonoBehaviour
         // mol.transform.parent = spawns[0];
         return mol;
     }
-    public void SpawnBomb()
+    public GameObject SpawnBomb()
     {
         GameObject bom = Instantiate(bombPrefab) as GameObject;
-        bom.transform.position = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f);
+        bom.transform.position = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 1f), 0f);
+        return bom;
     }
     public void setSpawns()
     {

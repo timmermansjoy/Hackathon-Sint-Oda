@@ -45,6 +45,8 @@ public class ClickController : MonoBehaviour
                 GameObject[] arr = GameObject.FindGameObjectsWithTag("Mol");
                 foreach (GameObject e in arr)
                 {
+                    GameObject star = Instantiate(starPrefab) as GameObject;
+                    star.transform.position = e.transform.position;
                     Destroy(e);
                 }
                 Destroy(hit.transform.gameObject);
