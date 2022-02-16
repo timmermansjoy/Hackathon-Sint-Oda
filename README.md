@@ -5,7 +5,7 @@
 Naam  | Richting
 ------------- | -------------
 Joy Timmermans  | AON
-Benito LoBue  | AON
+Benito Lo Bue  | AON
 Wiktor Kosinski  | AON
 Giel Hendriks | AON
 Mil Cuyvers | AON
