@@ -907,7 +907,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars: {fileID: 0}
-  starPrefab: {fileID: 5618474458242785179, guid: d008f0766b402e64fbe4c20376cb1878, type: 3}
 --- !u!1 &923243209
 GameObject:
   m_ObjectHideFlags: 0
