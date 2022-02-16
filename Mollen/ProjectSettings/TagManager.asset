@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScoreObject
   - Mol
+  - Bom
   layers:
   - Default
   - TransparentFX
