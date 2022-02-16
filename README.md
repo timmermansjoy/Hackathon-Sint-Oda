@@ -12,11 +12,13 @@ Josef Omelyusik (SWM)
 We hebben het Malle Mollen spel gemaakt. Wanneer het spel opstart zal er een mol verschijnen. Het is de bedoeling dat de gebruiker hier dan op klikt. Daarna zullen er op een willekeurige plaats steeds nieuwe mollen verschijnen. De gebruiker zal elke mol proberen te klikken. 
 
 #### Gebruikte technologieën  
-De 2021.2.11 versie van Unity wordt hier gebruikt.
+Unity - version 2021.2.11
 
 #### Gebruikte resources
-Welke resources (afbeeldingen, geluiden, ...) hebben jullie gebruikt? Graag bronvermelding / URL toevoegen  
-Tutorials:
+Audio:  
+https://www.storyblocks.com/audio/stock/icicles-shiny-bells-hxceib3niprk0wxsafw.html
+https://www.youtube.com/watch?v=W931nTCAP7I
+Tutorials:  
 https://noobtuts.com/unity/2d-whack-a-mole-game
 https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s
 

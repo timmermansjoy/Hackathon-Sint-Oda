@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public int maxHoles = 16;
     public int maxPause = 5;
     private int minNumber = 1;
+    public int maxLevel = 4;
 
 
 
@@ -33,6 +34,9 @@ public class MainMenu : MonoBehaviour
 
         int size = PlayerPrefs.GetInt("grootte");
         GameObject.Find("SizeNumberIndicator").GetComponent<TMPro.TextMeshProUGUI>().text = "" + (size);
+
+        int level = PlayerPrefs.GetInt("level");
+        GameObject.Find("LevelNumberIndicator").GetComponent<TMPro.TextMeshProUGUI>().text = "" + (size);
     }
 
 
@@ -117,6 +121,24 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void increaseLevel()
+    {
+        int level = PlayerPrefs.GetInt("level");
+        if(level <= maxLevel)
+        {
+            PlayerPrefs.SetInt("level", level + 1);
+            GameObject.Find("LevelNumberIndicator").GetComponent<TMPro.TextMeshProUGUI>().text = "" + (level + 1);
+        }
+    }
 
+    public void decreaseLevel()
+    {
+        int level = PlayerPrefs.GetInt("level");
+        if(level > minNumber)
+        {
+            PlayerPrefs.SetInt("level", level - 1);
+            GameObject.Find("LevelNumberIndicator").GetComponent<TMPro.TextMeshProUGUI>().text = "" + (level - 1);
+        }
+    }
 
 }
