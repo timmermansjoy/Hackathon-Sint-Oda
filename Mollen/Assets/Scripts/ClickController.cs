@@ -37,6 +37,15 @@ public class ClickController : MonoBehaviour
                 // txt.text = score.ToString();
                 //Debug.Log(cam.WorldToScreenPoint(txt.transform.position));
             }
+            else if (hit.collider != null && hit.transform.gameObject.tag == "Bom")
+            {
+                GameObject[] arr = GameObject.FindGameObjectsWithTag("Mol");
+                foreach (GameObject e in arr)
+                {
+                    Destroy(e);
+                }
+
+            }
         }
     }
 
