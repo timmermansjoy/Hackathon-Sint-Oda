@@ -23,7 +23,7 @@ public class ClickController : MonoBehaviour
             Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouse2D = new Vector2(mouse.x, mouse.y);
             RaycastHit2D hit = Physics2D.Raycast(mouse2D, Vector2.zero);
-            if (hit.collider != null)
+            if (hit.collider != null && hit.transform.gameObject.tag == "Mol")
             {
                 // playStarsParticle(mouse);
                 GameObject star = Instantiate(starPrefab) as GameObject;

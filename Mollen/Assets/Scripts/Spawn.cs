@@ -72,7 +72,7 @@ public class Spawn : MonoBehaviour
             {
                 //Debug.Log(j);
                 spawn = Instantiate(spawnPrefab) as GameObject;
-                spawn.transform.position = new Vector3(j + (Random.Range(0f, 1f)), (2 * i) + (Random.Range(0f, 1.5f)), 0);
+                spawn.transform.position = new Vector3(j + (Random.Range(0f, 1f)), (1.8f * i) - 2.4f + (Random.Range(0f, 1.5f)), 0);
                 spawns[count] = spawn.transform;
                 count++;
             }

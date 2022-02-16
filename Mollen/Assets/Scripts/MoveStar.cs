@@ -12,6 +12,7 @@ public class MoveStar : MonoBehaviour
     public Transform mol;
     private Spawn spawner;
     private StarSpin ster;
+    private GameObject star;
 
 
     void Start()
@@ -19,7 +20,8 @@ public class MoveStar : MonoBehaviour
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
         txt = GameObject.Find("Score").GetComponent<TMPro.TextMeshProUGUI>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
-        ster = GameObject.Find("SterHitbox").GetComponent<StarSpin>();
+        star = GameObject.Find("SterHitbox");
+        ster = star.GetComponent<StarSpin>();
 
     }
 
@@ -28,7 +30,7 @@ public class MoveStar : MonoBehaviour
         transform.Rotate(0, 0, 1f);
         float step = speed * Time.deltaTime;
         //transform.position = Vector3.MoveTowards(transform.position, cam.ScreenToWorldPoint(txt.transform.position), step);
-        transform.position = Vector3.MoveTowards(transform.position, ster.transform.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, star.transform.position, step);
 
     }
     private void OnTriggerEnter2D(Collider2D other)

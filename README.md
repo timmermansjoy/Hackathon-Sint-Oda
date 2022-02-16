@@ -16,11 +16,11 @@ Unity - version 2021.2.11
 
 #### Gebruikte resources
 Audio:  
-https://www.storyblocks.com/audio/stock/icicles-shiny-bells-hxceib3niprk0wxsafw.html
-https://www.youtube.com/watch?v=W931nTCAP7I
+https://www.storyblocks.com/audio/stock/icicles-shiny-bells-hxceib3niprk0wxsafw.html  
+https://www.youtube.com/watch?v=W931nTCAP7I  
 Tutorials:  
-https://noobtuts.com/unity/2d-whack-a-mole-game
-https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s
+https://noobtuts.com/unity/2d-whack-a-mole-game  
+https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s  
 
 #### Repository
 Link naar de repository:
@@ -28,8 +28,3 @@ https://github.com/PXL-Smart-ICT/hackathon-sint-oda-feb2022-team05
 
 #### Build / deploy proces  
 Documenteer hier de vereiste stappen om de applicatie te builden en/of deployen op een tablet  
-
-#### Randinformatie  
-Indien jullie nog bepaalde andere informatie wensen toe te voegen is daar hier ruimte voor  
-
-#### Optioneel: screenshots van de applicatie:
