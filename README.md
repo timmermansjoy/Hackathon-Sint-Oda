@@ -1,15 +1,19 @@
 # Hackathon Sint Oda - februari 2022 - groep 05
 
+<p align="center">
+  <img width="500px" src="https://media.discordapp.net/attachments/901407320804819014/943501637236969472/Screenshot_2022-02-16_at_2.36.53_PM.png">
+</p>
+
 #### Teamleaden
 
-Naam  | Richting
-------------- | -------------
-Joy Timmermans  | AON
-Benito Lo Bue  | AON
-Wiktor Kosinski  | AON
-Giel Hendriks | AON
-Mil Cuyvers | AON
-Josef Omelyusik  | SWM
+| Naam            | Richting |
+| --------------- | -------- |
+| Joy Timmermans  | AON      |
+| Benito Lo Bue   | AON      |
+| Wiktor Kosinski | AON      |
+| Giel Hendriks   | AON      |
+| Mil Cuyvers     | AON      |
+| Josef Omelyusik | SWM      |
 
 #### Gekozen onderwerp game: Malle Mollen
 
