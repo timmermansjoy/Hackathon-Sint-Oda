@@ -5,13 +5,14 @@ using UnityEngine;
 public class MolController : MonoBehaviour
 {
     private Spawn spawner;
-    public float lifeTime = 5f;
+    public float lifeTime;
     public Sprite[] molSprites;
     public GameObject molDoodPrefab;
+    private int speed = PlayerPrefs.GetInt("speed");
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
-        lifeTime = Random.Range(2f, 8f);
+        lifeTime = Random.Range(2f, 6f - (speed / 1.5f));
         int soort = Random.Range(0, 10);
         Sprite spr;
         if (soort == 1)

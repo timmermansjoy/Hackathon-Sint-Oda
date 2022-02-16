@@ -80,12 +80,19 @@ public class Spawn : MonoBehaviour
             {
                 //Debug.Log(j);
                 spawn = Instantiate(spawnPrefab) as GameObject;
-                spawn.transform.position = new Vector3(j + (Random.Range(0f, 0.4f)), (2 * i) + (Random.Range(0f, 1.5f)), 0);
+                spawn.transform.position = new Vector3(j + (Random.Range(0f, 1f)), (2 * i) + (Random.Range(0f, 1.5f)), 0);
                 spawns[count] = spawn.transform;
                 count++;
             }
 
         }
+    }
+
+    public void randomSpawn(){
+        // Place X number of spawners in the camera view and randomize their position
+        GameObject spawn;
+        int count = 0;
+
     }
 
 }
