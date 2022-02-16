@@ -860,7 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   molPrefab: {fileID: 5409008480641268140, guid: c3ae37e4d0feaac42ab3780310859e1f, type: 3}
   spawnPrefab: {fileID: 4700866804755572986, guid: a0a651412bcafd844aaac14a21e04ec5, type: 3}
-  bombPrefab: {fileID: 0}
+  bombPrefab: {fileID: 4850120656448238380, guid: d8047bd91ab14c1459c2e81033e4f611, type: 3}
   currentMol: {fileID: 0}
   currentBom: {fileID: 0}
   spawns:
