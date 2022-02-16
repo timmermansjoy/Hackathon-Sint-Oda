@@ -27,10 +27,11 @@ public class MoveStar : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, 0, 1f);
+        transform.Rotate(0, 0, 0.1f);
         float step = speed * Time.deltaTime;
         //transform.position = Vector3.MoveTowards(transform.position, cam.ScreenToWorldPoint(txt.transform.position), step);
         transform.position = Vector3.MoveTowards(transform.position, star.transform.position, step);
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)

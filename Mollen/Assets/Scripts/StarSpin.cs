@@ -17,7 +17,7 @@ public class StarSpin : MonoBehaviour
         {
             spinDur -= Time.deltaTime;
             transform.Rotate(0, 0, 3f);
-            transform.localScale += new Vector3(0.08f, 0.08f, 0f);
+            transform.localScale += new Vector3(0.03f, 0.03f, 0f);
         }
         if (spinDur < 0)
         {

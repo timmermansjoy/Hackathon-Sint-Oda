@@ -10,6 +10,7 @@ public class MolController : MonoBehaviour
     public GameObject molDoodPrefab;
     GameObject ded;
     private int speed;
+    public GameObject starPrefab;
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
@@ -59,6 +60,8 @@ public class MolController : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameObject star = Instantiate(starPrefab) as GameObject;
+        star.transform.position = transform.position;
         ded = Instantiate(molDoodPrefab) as GameObject;
         ded.transform.position = transform.position;
     }
