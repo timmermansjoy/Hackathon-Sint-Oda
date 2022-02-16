@@ -16,11 +16,11 @@ Unity - version 2021.2.11
 
 #### Gebruikte resources
 Audio:  
-https://www.storyblocks.com/audio/stock/icicles-shiny-bells-hxceib3niprk0wxsafw.html
+https://www.storyblocks.com/audio/stock/icicles-shiny-bells-hxceib3niprk0wxsafw.html  
 https://www.youtube.com/watch?v=W931nTCAP7I  
 Tutorials:  
-https://noobtuts.com/unity/2d-whack-a-mole-game
-https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s
+https://noobtuts.com/unity/2d-whack-a-mole-game  
+https://www.youtube.com/watch?v=zc8ac_qUXQY&t=7s  
 
 #### Repository
 Link naar de repository:
