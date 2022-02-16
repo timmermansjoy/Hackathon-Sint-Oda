@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject currentMol;
     public Transform[] spawns;
-    private float gameTime = PlayerPrefs.GetInt("pauze");
+    private float gameTime;
     public bool start;
     public int score;
     [SerializeField] float scaleHitbox = 0.0f;
