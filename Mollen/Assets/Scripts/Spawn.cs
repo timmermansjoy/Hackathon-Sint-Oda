@@ -13,26 +13,27 @@ public class Spawn : MonoBehaviour
     public bool start;
     public int score;
     [SerializeField] float scaleHitbox = 0.0f;
-    // public class Mol
-    // {
-    //     void Start()
-    //     {
 
-    //     }
-    //     void Update()
-    //     {
 
-    //     }
-    //     void OnDestroy()
-    //     {
-    //         Debug.Log("Destroyed");
-    //     }
-    // }
+    private int speed;
+    private int pauze;
+    private int grootte;
+    private int holes;
+
+
     void Start()
     {
         setSpawns();
         score = 0;
         currentMol = SpawnMol();
+
+
+        // settings
+        speed = PlayerPrefs.GetInt("speed");
+        pauze = PlayerPrefs.GetInt("pauze");
+        grootte = PlayerPrefs.GetInt("grootte");
+        holes = PlayerPrefs.GetInt("holes");
+
 
     }
 
@@ -41,26 +42,31 @@ public class Spawn : MonoBehaviour
         if (start)
         {
             gameTime -= Time.deltaTime;
+
         }
         //Debug.Log(gameTime);
         if (gameTime < 0)
         {
-            gameTime = Random.Range(2f, 6f);
+            gameTime = Random.Range(2f, 6f - speed) + (pauze / 2);
             currentMol = SpawnMol();
         }
     }
 
+
+
+
     public GameObject SpawnMol()
     {
         GameObject mol = Instantiate(molPrefab) as GameObject;
+
+
         CapsuleCollider2D molCollider = GetComponent<CapsuleCollider2D>();
-        mol.transform.localScale += new Vector3(scaleHitbox, scaleHitbox, 0.0f);
+        mol.transform.localScale += new Vector3(scaleHitbox * (grootte), scaleHitbox * (grootte), 0.0f);
 
 
         mol.transform.position = spawns[Random.Range(0, spawns.Length)].transform.position;
         mol.transform.position = new Vector3(mol.transform.position.x, mol.transform.position.y + 0.75f, 0);
         // mol.transform.parent = spawns[0];
-
         return mol;
     }
     public void setSpawns()
@@ -79,7 +85,6 @@ public class Spawn : MonoBehaviour
             }
 
         }
-
     }
 
 }
