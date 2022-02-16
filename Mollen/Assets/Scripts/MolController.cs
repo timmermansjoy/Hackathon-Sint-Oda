@@ -8,6 +8,7 @@ public class MolController : MonoBehaviour
     public float lifeTime = 5f;
     public Sprite[] molSprites;
     public GameObject molDoodPrefab;
+    GameObject ded;
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
@@ -54,7 +55,12 @@ public class MolController : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameObject ded = Instantiate(molDoodPrefab) as GameObject;
+        ded = Instantiate(molDoodPrefab) as GameObject;
         ded.transform.position = transform.position;
     }
+    private void OnApplicationQuit()
+    {
+        //Debug.Log("End");
+    }
+
 }
