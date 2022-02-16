@@ -9,9 +9,10 @@ public class Spawn : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject currentMol;
     public Transform[] spawns;
-    public float gameTime = 5f;
+    private float gameTime = PlayerPrefs.GetInt("pauze");
     public bool start;
     public int score;
+    public int counter = 0;
     [SerializeField] float scaleHitbox = 0.0f;
 
 
@@ -41,8 +42,8 @@ public class Spawn : MonoBehaviour
     {
         if (start)
         {
+            if (counter < 1) { Debug.Log(gameTime); }
             gameTime -= Time.deltaTime;
-
         }
         //Debug.Log(gameTime);
         if (gameTime < 0)
