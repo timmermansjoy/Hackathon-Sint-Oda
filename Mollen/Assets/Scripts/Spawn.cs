@@ -11,6 +11,7 @@ public class Spawn : MonoBehaviour
     public Transform[] spawns;
     public float gameTime = 5f;
     public bool start;
+    public int score;
     [SerializeField] float scaleHitbox = 0.0f;
     // public class Mol
     // {
@@ -30,6 +31,7 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         setSpawns();
+        score = 0;
         currentMol = SpawnMol();
 
     }
@@ -69,7 +71,7 @@ public class Spawn : MonoBehaviour
         {
             for (int j = -6; j < 7; j += 2)
             {
-                Debug.Log(j);
+                //Debug.Log(j);
                 spawn = Instantiate(spawnPrefab) as GameObject;
                 spawn.transform.position = new Vector3(j + (Random.Range(0f, 0.4f)), (2 * i) + (Random.Range(0f, 1.5f)), 0);
                 spawns[count] = spawn.transform;

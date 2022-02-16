@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ClickController : MonoBehaviour
 {
-    public ParticleSystem stars;
+    //public ParticleSystem stars;
     private Spawn spawner;
+
+    public GameObject starPrefab;
+    // public TMPro.TextMeshProUGUI txt;
+    // Camera cam;
     void Start()
     {
         spawner = GetComponent<Spawn>();
+        // txt = GameObject.Find("Score").GetComponent<TMPro.TextMeshProUGUI>();
+        // cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
     void Update()
     {
@@ -19,19 +25,25 @@ public class ClickController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mouse2D, Vector2.zero);
             if (hit.collider != null)
             {
-                playStarsParticle(mouse);
+                //playStarsParticle(mouse);
+                GameObject star = Instantiate(starPrefab) as GameObject;
+                star.transform.position = hit.transform.gameObject.transform.position;
+                //Debug.Log(star);
                 Destroy(hit.transform.gameObject);
                 if (!spawner.start)
                 {
                     spawner.start = true;
                 }
+                // score++;
+                // txt.text = score.ToString();
+                //Debug.Log(cam.WorldToScreenPoint(txt.transform.position));
             }
         }
     }
-    void playStarsParticle(Vector3 mousePos)
-    {
-        ParticleSystem.ShapeModule _editableShape = stars.shape;
-        _editableShape.position = new Vector3(mousePos.x, 0, mousePos.y);
-        stars.Play();
-    }
+    // void playStarsParticle(Vector3 mousePos)
+    // {
+    //     ParticleSystem.ShapeModule _editableShape = stars.shape;
+    //     _editableShape.position = new Vector3(mousePos.x, 0, mousePos.y);
+    //     stars.Play();
+    // }
 }
