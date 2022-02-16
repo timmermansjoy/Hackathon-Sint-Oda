@@ -2,12 +2,14 @@
 
 #### Teamleaden
 
-Joy Timmermans (AON)
-Benito LoBue (AON)
-Wiktor Kosinski (AON)
-Giel Hendriks (AON)
-Mil Cuyvers (AON)
-Josef Omelyusik (SWM)
+Naam  | Richting
+------------- | -------------
+Joy Timmermans  | AON
+Benito LoBue  | AON
+Wiktor Kosinski  | AON
+Giel Hendriks | AON
+Mil Cuyvers | AON
+Josef Omelyusik  | SWM
 
 #### Gekozen onderwerp game: Malle Mollen
 
