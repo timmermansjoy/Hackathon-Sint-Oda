@@ -12,7 +12,6 @@ public class Spawn : MonoBehaviour
     private float gameTime = PlayerPrefs.GetInt("pauze");
     public bool start;
     public int score;
-    public int counter = 0;
     [SerializeField] float scaleHitbox = 0.0f;
 
 
@@ -28,21 +27,17 @@ public class Spawn : MonoBehaviour
         score = 0;
         currentMol = SpawnMol();
 
-
         // settings
         speed = PlayerPrefs.GetInt("speed");
         pauze = PlayerPrefs.GetInt("pauze");
         grootte = PlayerPrefs.GetInt("grootte");
         holes = PlayerPrefs.GetInt("holes");
-
-
     }
 
     void Update()
     {
         if (start)
         {
-            if (counter < 1) { Debug.Log(gameTime); }
             gameTime -= Time.deltaTime;
         }
         //Debug.Log(gameTime);
@@ -52,9 +47,6 @@ public class Spawn : MonoBehaviour
             currentMol = SpawnMol();
         }
     }
-
-
-
 
     public GameObject SpawnMol()
     {
@@ -84,15 +76,6 @@ public class Spawn : MonoBehaviour
                 spawns[count] = spawn.transform;
                 count++;
             }
-
         }
     }
-
-    public void randomSpawn(){
-        // Place X number of spawners in the camera view and randomize their position
-        GameObject spawn;
-        int count = 0;
-
-    }
-
 }
