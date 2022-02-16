@@ -8,11 +8,14 @@ public class MolController : MonoBehaviour
     public float lifeTime;
     public Sprite[] molSprites;
     public GameObject molDoodPrefab;
+    GameObject ded;
     private int speed;
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
+        speed = PlayerPrefs.GetInt("speed");
         lifeTime = Random.Range(2f, 6f - (speed / 1.5f));
+
         int soort = Random.Range(0, 10);
         speed = PlayerPrefs.GetInt("speed");
         Sprite spr;
@@ -56,7 +59,12 @@ public class MolController : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameObject ded = Instantiate(molDoodPrefab) as GameObject;
+        ded = Instantiate(molDoodPrefab) as GameObject;
         ded.transform.position = transform.position;
     }
+    private void OnApplicationQuit()
+    {
+        //Debug.Log("End");
+    }
+
 }

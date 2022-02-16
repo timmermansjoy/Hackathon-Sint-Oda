@@ -11,12 +11,15 @@ public class MoveStar : MonoBehaviour
     public int score = 0;
     public Transform mol;
     private Spawn spawner;
+    private StarSpin ster;
+
 
     void Start()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawn>();
         txt = GameObject.Find("Score").GetComponent<TMPro.TextMeshProUGUI>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        ster = GameObject.Find("SterHitbox").GetComponent<StarSpin>();
 
     }
 
@@ -24,13 +27,16 @@ public class MoveStar : MonoBehaviour
     {
         transform.Rotate(0, 0, 1f);
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, cam.ScreenToWorldPoint(txt.transform.position), step);
+        //transform.position = Vector3.MoveTowards(transform.position, cam.ScreenToWorldPoint(txt.transform.position), step);
+        transform.position = Vector3.MoveTowards(transform.position, ster.transform.position, step);
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "ScoreObject")
         {
             spawner.score += 1;
+            ster.spin = true;
             txt.text = spawner.score.ToString();
             cam.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
