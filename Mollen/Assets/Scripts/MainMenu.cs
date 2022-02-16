@@ -42,6 +42,7 @@ public class MainMenu : MonoBehaviour
     public void OnPointerUp()
     {
         isPressed = false;
+        pressedTime = 0f;
     }
 
     public void updateClick()
