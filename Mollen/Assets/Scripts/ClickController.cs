@@ -6,6 +6,8 @@ public class ClickController : MonoBehaviour
 {
     public ParticleSystem stars;
     private Spawn spawner;
+    public GameObject starPrefab;
+
 
     //public GameObject starPrefab;
     // public TMPro.TextMeshProUGUI txt;
@@ -26,7 +28,8 @@ public class ClickController : MonoBehaviour
             if (hit.collider != null && hit.transform.gameObject.tag == "Mol")
             {
                 // playStarsParticle(mouse);
-
+                GameObject star = Instantiate(starPrefab) as GameObject;
+                star.transform.position = hit.transform.gameObject.transform.position;
                 //Debug.Log(star);
                 Destroy(hit.transform.gameObject);
                 if (!spawner.start)
@@ -44,6 +47,7 @@ public class ClickController : MonoBehaviour
                 {
                     Destroy(e);
                 }
+                Destroy(hit.transform.gameObject);
 
             }
         }
